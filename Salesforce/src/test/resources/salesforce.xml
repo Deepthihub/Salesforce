@@ -1,0 +1,8 @@
+<suite name="Salesforce">
+<test name="Leadtest">
+<classes>
+	<class name="main.Sales_main"/>
+	<class name="testsuite.Salesforce_test"/>
+</classes>
+</test>
+</suite>
