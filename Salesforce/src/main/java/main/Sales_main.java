@@ -1,4 +1,4 @@
-package main;
+	package main;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,6 +28,10 @@ public class Sales_main
 	public static ExtentHtmlReporter exthtml;
 	public static ExtentReports report;
 	public static ExtentTest exttest;
+	public static String email;
+	public static String pass;
+	public static String userCheck;
+	public static String importUser;
 	
 	@BeforeSuite
 	public void setUp()
@@ -62,6 +66,11 @@ public class Sales_main
 		exthtml.config().setReportName("Leads Testing");
 		exthtml.config().setTestViewChartLocation(ChartLocation.TOP);
 		exthtml.config().setTheme(Theme.STANDARD);
+		
+		email=prop.getProperty("username");
+		pass=prop.getProperty("password");
+		userCheck=prop.getProperty("checkuser");
+		importUser=prop.getProperty("checkimportuser");
 	}
 	
 	public void takeScreenShot(String image) 
@@ -74,7 +83,7 @@ public class Sales_main
 		}catch(Exception e) {}
 	}
 	
-	@AfterSuite
+	
 	public void shutDown()
 	{
 		driver.quit();
